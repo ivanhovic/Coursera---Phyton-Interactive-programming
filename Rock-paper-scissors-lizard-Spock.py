@@ -16,8 +16,8 @@
 import random
 
 def number_to_name(number):
-    # fill in your code below
     # convert number to a name using if/elif/else
+    
     if number == 0:
         name = "rock"
         return name
@@ -34,12 +34,10 @@ def number_to_name(number):
         name = "scissors"
         return name
     else: print "you need to imput a number between 0-4"
-# don't forget to return the result!
-
 
 def name_to_number(name):
-    # fill in your code below
     # convert name to number using if/elif/else
+    
     if name == "rock":
         number = 0
         return number
@@ -57,11 +55,8 @@ def name_to_number(name):
         return number
     else: print "you need to imput a correct string"
 
-# don't forget to return the result!
-
-
 def rpsls(name):
-    # fill in your code below
+
     # convert name to player_number using name_to_number
     print "Player chooses", name
     number = name_to_number(name)
@@ -81,8 +76,6 @@ def rpsls(name):
     # convert comp_number to name using number_to_name
     # print results
     print ""
-
-
 
 # test your code
 rpsls("rock")
