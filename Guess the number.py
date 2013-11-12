@@ -2,8 +2,6 @@
 # input will come from buttons and an input field
 # all output for the game will be printed in the console
 
-# http://www.codeskulptor.org/#user24_aXsOhNH6he_10.py
-
 import simplegui
 import random
 
@@ -44,16 +42,17 @@ def input_guess(guess):
     # main game logic goes here
     
     global attempts
+    print "Your guess was", guess
+    attempts = attempts-1
+    print "Number of remaining guesses:", attempts
+
     if attempts > 0:
-        print "Your guess was:", guess
         if int(guess) > secret_number:
             print "LOWER!!"
-            attempts = attempts-1
-            print "Number of remaining guesses:", attempts
+            print ""
         elif int(guess) < secret_number:
             print "HIGHER"
-            attempts = attempts-1
-            print "Number of remaining guesses:", attempts
+            print ""
         elif int(guess) == secret_number:
             print "CORRECT!!"
             print ""
@@ -61,7 +60,8 @@ def input_guess(guess):
             new_game()
     else:
         print ""
-        print "Game over. New game starts!"
+        print "Game over. The name was:", secret_number
+        print "New game starts!"
         attempts = 7
         new_game()
             
@@ -79,5 +79,3 @@ f.add_button("Range [0,1000)", range1000, 200)
 # call new_game and start frame
 new_game()
 f.start()
-
-# always remember to check your completed program against the grading rubric
